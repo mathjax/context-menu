@@ -84,6 +84,7 @@ export class Checkbox extends AbstractVariableItem<boolean> {
     this.span = document.createElement('span');
     this.span.textContent = '\u2713';
     this.span.classList.add(HtmlClasses['MENUCHECK']);
+    this.span.setAttribute('aria-hidden', 'true');
   }
 
   /**
