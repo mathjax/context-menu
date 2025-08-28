@@ -85,7 +85,7 @@ export abstract class MenuElement
   public focus() {
     const html = this.html;
     html.setAttribute('tabindex', '0');
-    html.focus();
+    setTimeout(() => html.focus(), 50);  // delay is for Firefox on Windows
   }
 
   /**

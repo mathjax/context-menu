@@ -146,6 +146,7 @@ export class Submenu extends AbstractItem {
     this.span = document.createElement('span');
     this.span.textContent = '\u25BA';
     this.span.classList.add(HtmlClasses['MENUARROW']);
+    this.span.setAttribute('aria-hidden', 'true');
     html.appendChild(this.span);
     html.setAttribute('aria-haspopup', 'true');
   }

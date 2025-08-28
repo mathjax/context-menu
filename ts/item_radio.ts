@@ -84,6 +84,7 @@ export class Radio extends AbstractVariableItem<string> {
     this.span = document.createElement('span');
     this.span.textContent = '\u2713';
     this.span.classList.add(HtmlClasses['MENURADIOCHECK']);
+    this.span.setAttribute('aria-hidden', 'true');
   }
 
   /**
