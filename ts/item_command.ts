@@ -10,7 +10,7 @@
  *
  *  Unless required by applicable law or agreed to in writing, software
  *  distributed under the License is distributed on an "AS IS" BASIS,
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either expressor implied.
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
@@ -64,6 +64,24 @@ export class Command extends AbstractItem {
     id?: string
   ) {
     super(menu, 'command', content, id);
+  }
+
+  /**
+   * @param {MouseEvent} event   The mousedown event
+   */
+  public mousedown(event: MouseEvent) {
+    this.stop(event);
+  }
+
+  /**
+   * Do the press on mouseup so menu gets the mouse up rather than a dialog box
+   * after the menu closes.
+   *
+   * @param {MouseEvent} event   The mouseup event
+   */
+  public mouseup(event: MouseEvent) {
+    this.press();
+    this.stop(event);
   }
 
   /**
