@@ -35,8 +35,8 @@ function makeClass_(name: string): string {
  * @param def An array of css properties and their values.
  * @returns The css definition within braces.
  */
-function cssDef_(def: string[]) {
-  return '{\n  ' + def.join(';\n  ') + ';\n}';
+function cssDef_(def: string[], sep: string = ';') {
+  return '{\n  ' + def.join(sep + '\n  ') + ';\n}';
 }
 
 /*
@@ -186,7 +186,7 @@ MENU_STYLES[makeClass_('MENURULE')] = cssDef_([
   'margin: 4px 3px',
 ]);
 MENU_STYLES[makeClass_('MENUDISABLED')] = cssDef_([
-  'color: GrayText',
+  'color: #999',
 ]);
 MENU_STYLES[makeClass_('MENUACTIVE')] = cssDef_([
   'background-color: #606872',
@@ -256,7 +256,7 @@ MENU_STYLES['@media (prefers-color-scheme: dark) /* menu */'] = cssDef_([
   makeClass_('SELECTIONDIVIDER') + ' ' + cssDef_([
     'border-top: 2px solid #808080',
   ]),
-]);
+], '');
 
 
 // Style of the little cross button to close a dialog or the mobile menu.
