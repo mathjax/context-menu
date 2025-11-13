@@ -74,7 +74,7 @@ export class Command extends AbstractItem {
   }
 
   /**
-   * Do the press on mouseup so menu gets the mouse up rather than a dialog box
+   * Perform press on mouseup so menu gets the mouse up rather than a dialog box
    * after the menu closes.
    *
    * @param {MouseEvent} event   The mouseup event
