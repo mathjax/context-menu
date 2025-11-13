@@ -67,6 +67,24 @@ export class Command extends AbstractItem {
   }
 
   /**
+   * @param {MouseEvent} event   The mousedown event
+   */
+  public mousedown(event: MouseEvent) {
+    this.stop(event);
+  }
+
+  /**
+   * Perform press on mouseup so menu gets the mouse up rather than a dialog box
+   * after the menu closes.
+   *
+   * @param {MouseEvent} event   The mouseup event
+   */
+  public mouseup(event: MouseEvent) {
+    this.press();
+    this.stop(event);
+  }
+
+  /**
    * @override
    */
   public executeAction() {
