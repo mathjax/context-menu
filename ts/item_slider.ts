@@ -163,7 +163,8 @@ export class Slider extends AbstractVariableItem<string> {
   /**
    * @override
    */
-  public mouseup(_event: MouseEvent) {
+  public mouseup(event: MouseEvent) {
+    MenuUtil.close(this);
     // Needed for Firefox
     event.stopPropagation();
   }
